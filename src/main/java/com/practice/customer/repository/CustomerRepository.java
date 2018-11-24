@@ -10,5 +10,5 @@ import com.practice.customer.domain.Customer;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-	public Customer findCustomerByCustomerName(String customerName);
+	public Optional<Customer> findCustomerByCustomerName(String customerName);
 }

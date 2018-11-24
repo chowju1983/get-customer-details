@@ -18,13 +18,31 @@ public class Customer {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private @NotNull Long customerId;
 	
+	private Integer score;
+	
+	
+
+	/**
+	 * @return the score
+	 */
+	public Integer getScore() {
+		return score;
+	}
+
+	/**
+	 * @param score the score to set
+	 */
+	public void setScore(Integer score) {
+		this.score = score;
+	}
+
 	public Customer() {
 		
 	}
 	
 
 	
-	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@OneToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private Address address;
 	
 
